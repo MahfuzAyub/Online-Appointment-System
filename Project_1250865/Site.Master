@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Project_1250865.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title><%=Page.Title %></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.0.0.js"></script>
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="container">
+            <h1 class="text-center">Project By Mahfuj Ayub</h1>
+        </div>
+        <nav class="navbar navbar-expand-sm bg-light navbar-light">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand">Project</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav nav">
+                        <li><a href="Home.aspx" class="nav-link">Home</a></li>
+                        <li><a href="Doctors.aspx" class="nav-link">Available Doctors</a></li>
+                        <li><a href="Members/AddDoctor.aspx" class="nav-link">Add Doctor</a></li>
+                        <li><a href="Members/Patients.aspx" class="nav-link">Patient Registration</a></li>
+                        <li><a href="Members/Appointment.aspx" class="nav-link">Create Appointment</a></li>
+                        <li><a href="Report.aspx" class="nav-link">Report</a></li>
+                        
+                    </ul>
+
+
+                </div>
+                </div>
+                <div class="navbar-nav nav">
+                    <asp:LoginView ID="LoginView1" runat="server">
+                        <AnonymousTemplate>
+                            <ul class="navbar list-group-horizontal">
+                                <li style="list-style:none"><a href="Login.aspx" class="nav-link">LogIn</a></li>
+                                <li style="list-style:none"><a href="Register.aspx" class="nav-link">Register</a></li>
+                            </ul>
+                            </div>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">LogOut</asp:LinkButton>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+        </nav>
+        <div class="container">
+            <asp:ContentPlaceHolder ID="mainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <br />
+        <div id="footer" class="text-center">
+                &copy; WWW.IDB-BISEW.ORG
+            </div>
+    </form>
+   
+    <script src="Scripts/bootstrap.js"></script>
+</body>
+</html>
